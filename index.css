@@ -1,0 +1,292 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  h1, h2, h3, h4, .font-serif-display {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Glassmorphism utility styles with enhanced text legibility and rich Pantone Warm Brown colors */
+.glass {
+  background: rgba(254, 252, 248, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(44, 24, 16, 0.08);
+}
+
+.glass-panel {
+  background: rgba(254, 252, 248, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 20px 45px rgba(44, 24, 16, 0.1);
+}
+
+.glass-dark {
+  background: rgba(28, 18, 14, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.glass-btn {
+  background: rgba(254, 252, 248, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #2b1810;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.98);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(44, 24, 16, 0.14);
+}
+
+.glass-card {
+  background: rgba(254, 252, 248, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 15px 35px rgba(44, 24, 16, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(44, 24, 16, 0.2);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+/* Dark mode glass overrides for high contrast */
+.dark .glass,
+.dark .glass-panel,
+.dark .glass-card {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+.text-contrast-heading {
+  color: #0f172a;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.dark .text-contrast-heading {
+  color: #f8fafc;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.text-contrast-body {
+  color: #1e293b;
+}
+
+.dark .text-contrast-body {
+  color: #e2e8f0;
+}
+
+/* Entry Animations */
+.fade-in-entry {
+  animation: fadeInDiary 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+}
+
+.fade-in-delayed {
+  animation: fadeInDiary 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+@keyframes fadeInDiary {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Floating Animation */
+.floating-cloud {
+  animation: float 25s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+.sunset-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 120, 0, 0.15) 0%, transparent 70%);
+}
+
+.heart-glow {
+  box-shadow: 0 0 20px rgba(66, 97, 125, 0.2);
+  transition: all 0.3s ease;
+}
+
+.heart-glow:hover {
+  box-shadow: 0 0 30px rgba(66, 97, 125, 0.35);
+  transform: translateY(-2px);
+}
+
+.diary-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(66, 97, 125, 0.2);
+  transition: border-color 0.4s ease;
+  outline: none;
+}
+
+.diary-input:focus {
+  border-bottom-color: #42617D;
+  box-shadow: none;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(162, 194, 225, 0.5);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(66, 97, 125, 0.7);
+}
+
+/* Realistic Flying Birds Animation */
+.flying-bird-flock {
+  animation: flyBirds 35s linear infinite;
+}
+
+@keyframes flyBirds {
+  0% {
+    transform: translate(-18vw, 8vh) scale(0.65);
+    opacity: 0;
+  }
+  4% {
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(52vw, -5vh) scale(0.85);
+  }
+  96% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(118vw, -16vh) scale(1.05);
+    opacity: 0;
+  }
+}
+
+/* Wing Flapping Keyframes for Realistic Birds */
+.bird-wing-flap-1 {
+  animation: flapWingsOrganic 0.7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+  transform-origin: center center;
+}
+
+.bird-wing-flap-2 {
+  animation: flapWingsOrganic 0.85s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate -0.2s;
+  transform-origin: center center;
+}
+
+.bird-wing-flap-3 {
+  animation: flapWingsOrganic 0.65s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate -0.4s;
+  transform-origin: center center;
+}
+
+@keyframes flapWingsOrganic {
+  0% {
+    transform: scaleY(1) rotate(0deg);
+  }
+  50% {
+    transform: scaleY(0.2) rotate(-8deg);
+  }
+  100% {
+    transform: scaleY(-0.8) rotate(4deg);
+  }
+}
+
+/* Realistic Flying Airplane Animation */
+.flying-airplane {
+  animation: flyAirplane 36s cubic-bezier(0.3, 0.1, 0.3, 1) infinite;
+}
+
+@keyframes flyAirplane {
+  0% {
+    transform: translate(-22vw, 12vh) rotate(-5deg) scale(0.75);
+    opacity: 0;
+  }
+  3% {
+    opacity: 0.98;
+  }
+  92% {
+    opacity: 0.98;
+  }
+  100% {
+    transform: translate(122vw, -12vh) rotate(-5deg) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* Airplane Strobe Navigation Lights */
+.strobe-red {
+  animation: strobeBlink 1.2s ease-in-out infinite;
+}
+
+.strobe-green {
+  animation: strobeBlink 1.2s ease-in-out infinite 0.6s;
+}
+
+@keyframes strobeBlink {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+.ripple-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: ripple 0.8s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

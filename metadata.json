@@ -1,0 +1,6 @@
+{
+  "name": "My Little World",
+  "description": "A serene digital sanctuary and travel journal with interactive WebGL atmospheres, memory maps, and quiet chapter captures.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
